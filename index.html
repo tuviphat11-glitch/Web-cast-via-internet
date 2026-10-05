@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AirMirror PIN Cast — WebRTC P2P Screen Mirroring via PeerJS</title>
+    <meta name="description" content="Real-time cross-network WebRTC P2P screen casting and mirroring between devices using PeerJS and a 4-digit PIN code with English and Vietnamese support." />
+    <meta property="og:title" content="AirMirror PIN Cast — WebRTC P2P Screen Mirroring via PeerJS" />
+    <meta property="og:description" content="Real-time cross-network WebRTC P2P screen casting and mirroring between devices using PeerJS and a 4-digit PIN code with English and Vietnamese support." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- PeerJS via CDN for real cross-network WebRTC P2P signaling and media streaming -->
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <!-- Tailwind CSS via CDN for standalone single-file compatibility -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            colors: {
+              canvas: '#090D16',
+              surface: '#111726',
+              border: '#1E293B',
+              accent: '#38BDF8',
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      body {
+        background-color: #090D16;
+        color: #F8FAFC;
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        overflow-x: hidden;
+      }
+      .tabular-nums {
+        font-variant-numeric: tabular-nums;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #090D16;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1E293B;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #334155;
+      }
+      @keyframes pulseRing {
+        0% { transform: scale(0.95); opacity: 0.7; }
+        50% { transform: scale(1.05); opacity: 0.3; }
+        100% { transform: scale(0.95); opacity: 0.7; }
+      }
+      .animate-pulse-ring {
+        animation: pulseRing 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-[#090D16] text-slate-100 antialiased selection:bg-sky-500/30 selection:text-sky-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

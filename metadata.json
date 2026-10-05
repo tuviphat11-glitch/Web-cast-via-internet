@@ -1,0 +1,6 @@
+{
+  "name": "AirMirror PIN Cast",
+  "description": "Secure cross-network screen casting and mirroring between devices using a 4-digit PIN code with English and Vietnamese support.",
+  "requestFramePermissions": ["display-capture"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
